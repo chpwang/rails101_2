@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     
     if @group.save
-      redirect_to groups_path
+      redirect_to groups_path, notice: "New Group Created!"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     if @group.update(group_params)
-      redirect_to groups_path, notice: "Update Success"
+      redirect_to groups_path, notice: "Update Success!"
     else
       render :edit
     end
